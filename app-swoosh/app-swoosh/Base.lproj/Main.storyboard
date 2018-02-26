@@ -141,6 +141,9 @@
                                         <state key="normal" title="Mens">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onMensTapped:" destination="jGn-bw-3x9" eventType="touchUpInside" id="LCX-z6-gXl"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oM2-iM-FpD" customClass="BorderButton" customModule="app_swoosh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="69" width="335" height="50"/>
@@ -152,6 +155,9 @@
                                         <state key="normal" title="Womens">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onWomensTapped:" destination="jGn-bw-3x9" eventType="touchUpInside" id="INa-qV-rYB"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3P-Aw-OFE" customClass="BorderButton" customModule="app_swoosh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="138" width="335" height="50"/>
@@ -163,10 +169,13 @@
                                         <state key="normal" title="Co-ed">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onCoedsTapped:" destination="jGn-bw-3x9" eventType="touchUpInside" id="faZ-Rh-xlZ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2W-qz-yNX" customClass="BorderButton" customModule="app_swoosh" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2W-qz-yNX" customClass="BorderButton" customModule="app_swoosh" customModuleProvider="target">
                                 <rect key="frame" x="20" y="597" width="335" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.3964308647" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -213,6 +222,7 @@
                         <viewLayoutGuide key="safeArea" id="oU4-zW-ez3"/>
                     </view>
                     <connections>
+                        <outlet property="nextBtn" destination="o2W-qz-yNX" id="Gdt-di-YiK"/>
                         <segue destination="gV9-zG-0OJ" kind="show" identifier="skillVCSegue" id="MCq-Ef-DTq"/>
                     </connections>
                 </viewController>
@@ -288,6 +298,17 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3w-qT-qii">
+                                <rect key="frame" x="20" y="30" width="44" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="lq6-iG-0IU"/>
+                                    <constraint firstAttribute="height" constant="33" id="mhO-hC-Ywm"/>
+                                </constraints>
+                                <state key="normal" image="backButton"/>
+                                <connections>
+                                    <segue destination="ctu-mF-yiu" kind="unwind" unwindAction="unwindFromLeagueVCWithUnwindSegue:" id="vOC-Sf-ksl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -295,10 +316,12 @@
                             <constraint firstItem="sTf-5U-Ooz" firstAttribute="trailing" secondItem="6yb-zE-GGa" secondAttribute="trailing" id="8nn-kX-RR6"/>
                             <constraint firstItem="HUu-Tq-dZd" firstAttribute="trailing" secondItem="sTf-5U-Ooz" secondAttribute="trailing" id="J2A-CN-rzD"/>
                             <constraint firstItem="sTf-5U-Ooz" firstAttribute="bottom" secondItem="HKA-SR-WqL" secondAttribute="bottom" constant="20" id="JrV-GT-hoR"/>
+                            <constraint firstItem="O3w-qT-qii" firstAttribute="top" secondItem="sTf-5U-Ooz" secondAttribute="top" constant="10" id="Rt4-Q5-nSR"/>
                             <constraint firstItem="HUu-Tq-dZd" firstAttribute="top" secondItem="sxb-6Y-3sc" secondAttribute="top" id="c6S-8Y-umt"/>
                             <constraint firstItem="HKA-SR-WqL" firstAttribute="leading" secondItem="sTf-5U-Ooz" secondAttribute="leading" constant="20" id="cLM-0Y-j8d"/>
                             <constraint firstItem="HUu-Tq-dZd" firstAttribute="bottom" secondItem="sTf-5U-Ooz" secondAttribute="bottom" id="fdD-RQ-0u1"/>
                             <constraint firstItem="sGO-qe-FUz" firstAttribute="top" secondItem="6yb-zE-GGa" secondAttribute="bottom" constant="50" id="igS-xT-PcJ"/>
+                            <constraint firstItem="O3w-qT-qii" firstAttribute="leading" secondItem="sTf-5U-Ooz" secondAttribute="leading" constant="20" id="jK9-7w-ZLw"/>
                             <constraint firstItem="6yb-zE-GGa" firstAttribute="top" secondItem="sTf-5U-Ooz" secondAttribute="top" constant="20" id="kkd-qM-o3L"/>
                             <constraint firstItem="sTf-5U-Ooz" firstAttribute="trailing" secondItem="HKA-SR-WqL" secondAttribute="trailing" constant="20" id="sVd-ag-YF5"/>
                             <constraint firstItem="sGO-qe-FUz" firstAttribute="leading" secondItem="sTf-5U-Ooz" secondAttribute="leading" constant="20" id="uHk-r9-EYH"/>
@@ -309,6 +332,7 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rs9-ni-ctY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ctu-mF-yiu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1724" y="134"/>
         </scene>
